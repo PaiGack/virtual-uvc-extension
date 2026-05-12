@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Virtual Camera (Fixed Image)",
+  "version": "0.1.0",
+  "description": "把网页 getUserMedia 摄像头流替换为一张固定图片。",
+  "permissions": ["storage", "unlimitedStorage"],
+  "action": {
+    "default_title": "Virtual Camera",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/inject.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/bridge.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "ISOLATED"
+    }
+  ]
+}

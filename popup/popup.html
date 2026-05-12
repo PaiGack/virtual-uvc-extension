@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>Virtual Camera</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>虚拟摄像头</h1>
+    <label class="switch">
+      <input type="checkbox" id="enabled" />
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <section class="preview">
+    <div class="preview-frame" id="previewFrame">
+      <img id="preview" alt="" hidden />
+      <span id="placeholder">选择一张图片</span>
+    </div>
+  </section>
+
+  <section class="controls">
+    <label class="file-button">
+      <input type="file" id="file" accept="image/*" />
+      <span>选择图片</span>
+    </label>
+    <button id="clear" class="ghost">清除</button>
+  </section>
+
+  <section class="options">
+    <div class="row">
+      <label for="resolution">分辨率</label>
+      <select id="resolution">
+        <option value="640x480">640 × 480</option>
+        <option value="1280x720" selected>1280 × 720</option>
+        <option value="1920x1080">1920 × 1080</option>
+        <option value="auto">跟随图片</option>
+      </select>
+    </div>
+    <div class="row">
+      <label for="frameRate">帧率</label>
+      <select id="frameRate">
+        <option value="15">15 fps</option>
+        <option value="24">24 fps</option>
+        <option value="30" selected>30 fps</option>
+        <option value="60">60 fps</option>
+      </select>
+    </div>
+  </section>
+
+  <p class="hint" id="hint">开启后刷新目标页面，再调用摄像头即可生效。</p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
