@@ -1,6 +1,6 @@
-# Virtual Camera (Fixed Image)
+# Virtual Camera
 
-一个 Chrome 扩展：把网页 `getUserMedia` 摄像头流替换为一张固定图片，常用于在线会议、招聘面试、远程办公等场景下规避真实摄像头出图。
+一个 Chrome 扩展：把网页 `getUserMedia` 摄像头流替换为一张固定图片/视频流，常用于在线会议、招聘面试、远程办公等场景下规避真实摄像头出图。
 
 ## 支持的素材类型
 
@@ -16,7 +16,7 @@
 - 支持自定义分辨率（640×480 / 1280×720 / 1920×1080 / 跟随原图）和帧率（15 / 24 / 30 / 60 fps）
 - 图片历史：最近 10 张已选图片自动保留，可通过 `‹` / `›` 或键盘 `←` / `→` 切换
 - 音频轨道透传：若页面同时请求音频，会调用真实麦克风并合并到虚拟流中
-- 兼容 `enumerateDevices`：当系统无视频输入时，注入一个名为 `Virtual Camera (Fixed Image)` 的虚拟设备
+- 兼容 `enumerateDevices`：当系统无视频输入时，注入一个名为 `Virtual Camera` 的虚拟设备
 
 ## 安装
 
@@ -76,8 +76,6 @@ virtual-uvc-extension/
 
 - 必须 **刷新目标页面** 后劫持才会生效（内容脚本在 `document_start` 注入）
 - 部分严格 CSP 站点可能阻止 `MAIN world` 注入，此时无法生效
-- `dataURL` 存储在 `chrome.storage.local`，已声明 `unlimitedStorage` 权限；但大图叠加多张历史仍会占空间，必要时点「清空全部」
-- 不支持视频文件，仅支持静态图片
 
 ## 调试
 
