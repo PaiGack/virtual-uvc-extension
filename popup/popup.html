@@ -18,15 +18,19 @@
     <div class="preview-frame" id="previewFrame">
       <img id="preview" alt="" hidden />
       <span id="placeholder">选择一张图片</span>
+      <button id="prev" class="nav-btn nav-prev" type="button" aria-label="上一张" hidden>‹</button>
+      <button id="next" class="nav-btn nav-next" type="button" aria-label="下一张" hidden>›</button>
+      <span id="counter" class="counter" hidden>0 / 0</span>
     </div>
   </section>
 
   <section class="controls">
     <label class="file-button">
-      <input type="file" id="file" accept="image/*" />
+      <input type="file" id="file" accept="image/*" multiple />
       <span>选择图片</span>
     </label>
-    <button id="clear" class="ghost">清除</button>
+    <button id="delete" class="ghost">删除当前</button>
+    <button id="clearAll" class="ghost">清空全部</button>
   </section>
 
   <section class="options">
