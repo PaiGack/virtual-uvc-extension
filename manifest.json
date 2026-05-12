@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Virtual Camera (Fixed Image)",
+  "name": "Virtual Camera",
   "version": "0.1.0",
-  "description": "把网页 getUserMedia 摄像头流替换为一张固定图片。",
+  "description": "把网页 getUserMedia 摄像头流替换为一张固定图片/视频流。",
   "permissions": ["storage", "unlimitedStorage"],
   "action": {
     "default_title": "Virtual Camera",
